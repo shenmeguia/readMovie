@@ -1,0 +1,31 @@
+page{
+  background:yellowgreen;
+}
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.user-avatar{
+  margin-top:200rpx;
+  width:200rpx;
+  height:200rpx;
+}
+.username{
+  font-size:32rpx;
+  font-weight:bold;
+  margin-top:60rpx;
+}
+.btn-box{
+  width:240rpx;
+  height:80rpx;
+  border:1px solid #405f80;
+  text-align:center;
+  margin-top:200rpx;
+  border-radius:6rpx;
+}
+.btn-text{
+  font-size:22rpx;
+  line-height:80rpx;
+  color:#405f80;
+}

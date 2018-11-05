@@ -1,0 +1,26 @@
+@import '../movie/movie-template.wxss';
+.movielist-container{
+  display: flex;
+  flex-direction: column;
+  background:white;
+}
+.movielist-container .movielist-head{
+  padding:30rpx 20rpx 22rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.movielist-container .movielist-head view image{
+  width:9rpx;
+  height:17rpx;
+}
+.movielist-container .movielist-head view text{
+  color:#1f4ba5;
+  margin-right:6rpx;
+}
+.movielist-container .movie-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

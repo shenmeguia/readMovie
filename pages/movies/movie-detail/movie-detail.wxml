@@ -1,0 +1,51 @@
+<import src='../star/star-template.wxml' />
+<view class='movie-detail-container'>
+  <image src='{{ movie.movieImg }}' class='head-img' mode='aspectFill' catchtap='onPreviewImage' data-img="{{ movie.movieImg }}"></image>
+  <view class='head-content'>
+    <text class='main-title'>{{ movie.title }}</text>
+    <text class='sub-title'>{{ movie.country }} · {{ movie.year }}</text>
+    <text class='like'>
+      <text class='high-text'>{{ movie.wishCount }}</text>
+      <text class='plain-text'>人喜欢</text>
+      <text class='high-text'>{{ movie.commentCount }}</text>
+      <text class='plain-text'>条评论</text>
+    </text>
+  </view>
+  <image src="{{ movie.movieImg }}" class='movie-img' catchtap='onPreviewImage' data-img="{{ movie.movieImg }}"></image>
+  <view class='summary'>
+    <text class='original-title'>{{ movie.originalTitle }}</text>
+    <view>
+      <text>评分</text>
+      <template is='starTemplate' data='{{ count:movie.score,stars:movie.stars }}' />
+    </view>
+    <view>
+      <text>导演</text>
+      <text>{{ movie.director.name }}</text>
+    </view>
+    <view>
+      <text>影人</text>
+      <text>{{ movie.casts }}</text>
+    </view>
+    <view>
+      <text>类型</text>
+      <text>{{ movie.generes }}</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='synopsis'>
+    <text>剧情简介</text>
+    <text>{{ movie.summary }}</text>
+  </view>
+  <view class='hr'></view>
+  <view class='cast'>
+    <text>影人</text>
+    <scroll-view scroll-x='true' class='cast-imgs'>
+      <block wx:for="{{ movie.castsInfo }}">
+        <view class='cast-box'>
+          <image src='{{ item.img }}'></image>
+          <text>{{ item.name }}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

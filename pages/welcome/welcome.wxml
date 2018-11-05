@@ -1,0 +1,7 @@
+<view class='container'>
+  <image src="/images/avatar/2.png" class="user-avatar"></image>
+  <text class='username'>hello moto</text>
+  <view class='btn-box' bindtap='jump'>
+    <text class='btn-text'>第一个小程序页面</text>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<import src="movielist/movielist-template.wxml" />
+<import src="movie-grid/moviegrid-template.wxml" />
+<view class='movies-container'>
+  <view class='search'>
+    <icon type='search' size='13' color='#405f80' class='search-img'></icon>
+    <input type='text' placeholder='想看的电影' placeholder-class='placeholder' bindfocus="onBindFocus" bindconfirm="onBindConfirm" value='{{ searchValue }}'></input>
+    <icon type='clear' size='13' color='#1F4BA5' wx:if='{{ searchShow }}' catchtap='onCloseSearch' class='close'></icon>
+  </view>
+  <view wx:if='{{ movieShow }}'>
+    <view class='list-container'>
+      <!--...是将数据展开  -->
+      <template is="movielistTemplate" data="{{ ...inTheaters }}" />
+    </view>
+    <view class='list-container'>
+      <template is="movielistTemplate" data="{{ ...comingSoon }}" />
+    </view>
+    <view class='list-container'>
+      <template is="movielistTemplate" data="{{ ...top250 }}" />
+    </view>
+  </view>
+  <!--搜索页  -->
+  <view class='search-coantiner' wx:if='{{ searchShow }}'>
+    <scroll-view scroll-x="false" scroll-y="true" bindscrolltolower="onBindScrollLower" class='search-list'>
+      <template is="moviegrid-template" data="{{ ...searchResult }}" />
+    </scroll-view>
+  </view>
+</view>
